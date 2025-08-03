@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Accordion from "./accordion";
-import ogImg from "./assets/propellent-og.png";
+import ogImg from "./assets/Brevix-og.png";
 
 
 const Faqs = () => {

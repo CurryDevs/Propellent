@@ -1,4 +1,4 @@
-import ogImg from "./assets/propellent-og.png";
+import ogImg from "./assets/Brevix-og.png";
 const Images = () => {
   return (
     <div className="flex items-center justify-center w-full">

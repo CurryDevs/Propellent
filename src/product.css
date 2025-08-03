@@ -1,0 +1,46 @@
+.fingerprint {
+  /* width: 96px; */
+  height: auto;
+  display: block;
+}
+
+.fingerprint path[stroke="#BDFF1C"] {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawGlowReverse 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px #BDFF1C);
+  stroke-width: 2;
+  fill: none;
+}
+
+.fingerprint path:nth-child(2) { animation-delay: 0s; }
+.fingerprint path:nth-child(3) { animation-delay: 0.2s; }
+.fingerprint path:nth-child(4) { animation-delay: 0.4s; }
+.fingerprint path:nth-child(5) { animation-delay: 0.6s; }
+.fingerprint path:nth-child(6) { animation-delay: 0.8s; }
+.fingerprint path:nth-child(7) { animation-delay: 1s; }
+.fingerprint path:nth-child(8) { animation-delay: 1.2s; }
+.fingerprint path:nth-child(9) { animation-delay: 1.4s; }
+
+@keyframes drawGlowReverse {
+  0% {
+    stroke-dashoffset: 300;
+    filter: drop-shadow(0 0 4px #BDFF1C);
+  }
+  25% {
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 10px #BDFF1C);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 4px #BDFF1C);
+  }
+  75% {
+    stroke-dashoffset: 300;
+    filter: drop-shadow(0 0 10px #BDFF1C);
+  }
+  100% {
+    stroke-dashoffset: 300;
+    filter: drop-shadow(0 0 4px #BDFF1C);
+  }
+}

@@ -1,11 +1,54 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import TestimonialCarouselDesktop from "./testimonial-carousel-desktop";
 import TestimonialCarouselMobile from "./testimonial-carousel-mobile";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
+
+const useCountUp = (end: number, duration: number, trigger: boolean) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) return;
+    let start = 0;
+    const increment = end / (duration * 60); // 60fps
+    let frame = 0;
+    const counter = setInterval(() => {
+      frame++;
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(counter);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 1000 / 60);
+    return () => clearInterval(counter);
+  }, [end, duration, trigger]);
+
+  return count;
+};
 
 const Testimonials = () => {
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!targetRef.current) return;
+      const rect = targetRef.current.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        setInView(true);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Counters
+  const candidateMatchRate = useCountUp(75, 2, inView);
+  const successfulPlacement = useCountUp(4000, 2, inView);
+  const operatingCountries = useCountUp(50, 2, inView);
 
   return (
     <section className="bg-[#f5f5f5] flex flex-col items-center w-full py-[60px] md:pb-[80px] px-[30px] xl:px-[56px] gap-[60px] md:gap-[80px] relative">
@@ -55,7 +98,10 @@ const Testimonials = () => {
           </motion.h1>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-8">
+        <div
+          ref={targetRef}
+          className="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-8"
+        >
           <div className="flex flex-col gap-3 items-center w-full md:w-1/3 xl:w-[445px] md:border-r border-[#B9BED1] md:pr-2.5 xl:pr-0">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -76,7 +122,7 @@ const Testimonials = () => {
               }}
               className="text-[#854dff] font-medium text-[48px] leading-[48px] md:text-[62px] xl:text-[80px] md:font-semi bold md:leading-[80px] tracking-[-3px]"
             >
-              75%
+              {candidateMatchRate}%
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -120,7 +166,7 @@ const Testimonials = () => {
               }}
               className="text-[#854dff] font-medium text-[48px] leading-[48px] md:text-[62px] xl:text-[80px] md:font-semi bold md:leading-[80px] tracking-[-3px]"
             >
-              4,000+
+              {successfulPlacement.toLocaleString()}+
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -164,7 +210,7 @@ const Testimonials = () => {
               }}
               className="text-[#854dff] font-medium text-[48px] leading-[48px] md:text-[62px] xl:text-[80px] md:font-semi bold md:leading-[80px] tracking-[-3px]"
             >
-              50+
+              {operatingCountries}+
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -245,7 +291,7 @@ const Testimonials = () => {
       </div>
 
       <Link
-        to="https://www.victorwilliams.me/"
+        to="https://github.com/CurryDevs"
         className="w-full flex items-center justify-center"
       >
         <motion.button

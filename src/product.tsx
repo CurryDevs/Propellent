@@ -1,10 +1,79 @@
+import "./product.css";
 import { motion } from "framer-motion";
 import invest from "./assets/invest.svg";
 import earn from "./assets/earn.svg";
 import sell from "./assets/sell.svg";
 import secure from "./assets/secure.png";
 import integrated from "./assets/integrated.png";
-import fingerprintTwo from "./assets/fingerprint-two.svg";
+
+const FingerprintSVG = () => (
+  <svg
+    width="146"
+    height="100"
+    viewBox="0 0 96 64"
+    className="fingerprint"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="96" height="64" rx="32" fill="black" />
+    <path
+      d="M42.8 44.2947C40.9469 41.65 39.8567 38.4324 39.8567 34.9583C39.8567 30.4591 43.5019 26.8125 47.9984 26.8125C52.4949 26.8125 56.1401 30.4591 56.1401 34.9583"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M42.8002 44.2947C40.947 41.65 39.8568 38.4324 39.8568 34.9583C39.8568 30.4591 43.502 26.8125 47.9985 26.8125C52.495 26.8125 56.1402 30.4591 56.1402 34.9583"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M56.5813 43.0823C56.4347 43.0904 56.2908 43.104 56.1428 43.104C51.6463 43.104 48.0011 39.4574 48.0011 34.9583"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M56.5816 43.0823C56.4349 43.0904 56.291 43.104 56.143 43.104C51.6466 43.104 48.0013 39.4574 48.0013 34.9583"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M49.6925 45.3332C46.2333 43.1759 43.9294 39.3365 43.9294 34.9582C43.9294 32.7086 45.7527 30.8853 48.0009 30.8853C50.2492 30.8853 52.0725 32.7086 52.0725 34.9582C52.0725 37.2078 53.8958 39.0311 56.144 39.0311C58.3922 39.0311 60.2155 37.2078 60.2155 34.9582C60.2155 28.2094 54.747 22.7395 48.0023 22.7395C41.2576 22.7395 35.7891 28.2094 35.7891 34.9582C35.7891 36.4624 35.9574 37.9273 36.2669 39.3392"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M49.6925 45.3332C46.2333 43.1759 43.9294 39.3365 43.9294 34.9582C43.9294 32.7086 45.7527 30.8853 48.0009 30.8853C50.2492 30.8853 52.0725 32.7086 52.0725 34.9582C52.0725 37.2078 53.8958 39.0311 56.144 39.0311C58.3922 39.0311 60.2155 37.2078 60.2155 34.9582C60.2155 28.2094 54.747 22.7395 48.0023 22.7395C41.2576 22.7395 35.7891 28.2094 35.7891 34.9582C35.7891 36.4624 35.9574 37.9273 36.2669 39.3392"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M59.3677 23.8176C56.5913 20.6638 52.532 18.6667 48.0002 18.6667C43.4685 18.6667 39.4092 20.6638 36.6328 23.8176"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M59.3677 23.8176C56.5913 20.6638 52.532 18.6667 48.0002 18.6667C43.4685 18.6667 39.4092 20.6638 36.6328 23.8176"
+      stroke="#BDFF1C"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 const Product = () => {
   return (
@@ -298,7 +367,7 @@ const Product = () => {
               }}
               className="flex flex-col xl:flex-row gap-4 items-center md:items-start w-full md:w-[376px] md:py-6 md:pl-8 rounded-[24px]"
             >
-              <img src={fingerprintTwo} alt="" className="w-[96px]" />
+              <FingerprintSVG />
               <div className="w-full flex flex-col items-center md:items-start gap-1 md:gap-2">
                 <h3 className="font-medium text-[24px] leading-[28.8px] tracking-[-1px] text-[#0f1728]">
                   AI-powered editor
@@ -327,7 +396,7 @@ const Product = () => {
               }}
               className="flex flex-col xl:flex-row gap-4 items-center md:items-start w-full md:w-[376px] md:py-6 md:pl-8 rounded-[24px]"
             >
-              <img src={fingerprintTwo} alt="" className="w-[96px]" />
+              <FingerprintSVG />
               <div className="w-full flex flex-col items-center md:items-start gap-1 md:gap-2">
                 <h3 className="font-medium text-[24px] leading-[28.8px] tracking-[-1px] text-[#0f1728]">
                   Tools integrations
@@ -356,7 +425,7 @@ const Product = () => {
               }}
               className="flex flex-col xl:flex-row gap-4 items-center md:items-start w-full md:w-[376px] md:py-6 md:pl-8 rounded-[24px]"
             >
-              <img src={fingerprintTwo} alt="" className="w-[96px]" />
+              <FingerprintSVG />
               <div className="w-full flex flex-col items-center md:items-start gap-1 md:gap-2">
                 <h3 className="font-medium text-[24px] leading-[28.8px] tracking-[-1px] text-[#0f1728]">
                   Data analytics
@@ -388,7 +457,7 @@ const Product = () => {
               }}
               className="flex flex-col xl:flex-row gap-4 items-center md:items-start w-full md:w-[376px] md:py-6 md:pl-8 rounded-[24px]"
             >
-              <img src={fingerprintTwo} alt="" className="w-[96px]" />
+              <FingerprintSVG />
               <div className="w-full flex flex-col items-center md:items-start gap-1 md:gap-2">
                 <h3 className="font-medium text-[24px] leading-[28.8px] tracking-[-1px] text-[#0f1728]">
                   Intuitive Task Management
@@ -417,7 +486,7 @@ const Product = () => {
               }}
               className="flex flex-col xl:flex-row gap-4 items-center md:items-start w-full md:w-[376px] md:py-6 md:pl-8 rounded-[24px]"
             >
-              <img src={fingerprintTwo} alt="" className="w-[96px]" />
+              <FingerprintSVG />
               <div className="w-full flex flex-col items-center md:items-start gap-1 md:gap-2">
                 <h3 className="font-medium text-[24px] leading-[28.8px] tracking-[-1px] text-[#0f1728]">
                   Advanced Data Analytics
@@ -446,7 +515,7 @@ const Product = () => {
               }}
               className="flex flex-col xl:flex-row gap-4 items-center md:items-start w-full md:w-[376px] md:py-6 md:pl-8 rounded-[24px]"
             >
-              <img src={fingerprintTwo} alt="" className="w-[96px]" />
+              <FingerprintSVG />
               <div className="w-full flex flex-col items-center md:items-start gap-1 md:gap-2">
                 <h3 className="font-medium text-[24px] leading-[28.8px] tracking-[-1px] text-[#0f1728]">
                   Scalability and Customization
