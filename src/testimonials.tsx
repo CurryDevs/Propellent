@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import TestimonialCarouselDesktop from "./testimonial-carousel-desktop";
 import TestimonialCarouselMobile from "./testimonial-carousel-mobile";
 import { Link } from "react-router-dom";
